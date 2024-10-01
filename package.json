@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.446.0",
+    "nuxt": "^3.13.0",
+    "radix-vue": "^1.9.6",
+    "sass": "^1.79.4",
+    "shadcn-nuxt": "^0.10.4",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxtbase/auth-ui-vue": "^0.3.7",
+    "@nuxtjs/supabase": "^1.4.0",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "add": "^2.0.6",
+    "typescript": "^5.6.2"
+  }
+}
