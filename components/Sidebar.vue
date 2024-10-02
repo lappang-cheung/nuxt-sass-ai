@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const currentRoute = useRoute()
 </script>
 
 <template>
@@ -15,14 +16,21 @@
         </h1>
       </NuxtLink>
       <div class="space-y-1">
-        <NuxtLink>
-
+        <NuxtLink v-for="route in dashboardLinks"
+                  :key="route.label"
+                  :to="route.link"
+                  class="text-sm group text-primary flex p-3 w-full justify-start font-medium cursor-pointer rounded-lg transition hover:bg-muted"
+                  :class="{'bg-muted' : currentRoute.path === route.link}">
+          <div class="flex items-center flex-1">
+            <Icon :name="route.icon" :class="`h-5 w-5 mr-3 ${route.color}`"/>
+            {{route.label}}
+          </div>
         </NuxtLink>
       </div>
     </div>
+    <!--  Counter  -->
   </div>
 </template>
 
 <style lang="scss" scoped>
-
 </style>
