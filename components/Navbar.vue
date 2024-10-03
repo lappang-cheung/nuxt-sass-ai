@@ -1,5 +1,11 @@
 <script setup lang="ts">
+const user = useSupabaseUser()
+const supabaseClient = useSupabaseClient()
 
+const logout = async () => {
+  await supabaseClient.auth.signOut()
+  navigateTo('/auth')
+}
 </script>
 
 <template>
@@ -13,13 +19,38 @@
                   class="h-6 w-6"/>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent align="end"
+                             class="w-72 left-[100px]">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Billing</DropdownMenuItem>
-          <DropdownMenuItem>Team</DropdownMenuItem>
-          <DropdownMenuItem>Subscription</DropdownMenuItem>
+          <div class="w-full flex items-center p-2 pl-3">
+            <Avatar class="mr-2">
+              <AvatarImage v-if="user?.user_metadata.avatar_url"
+                           :src="user.user_metadata.avatar_url">
+                <AvatarFallback>
+                  {{user?.email?.charAt(0).toUpperCase()}}
+                  {{user?.email?.charAt(1).toUpperCase()}}
+                </AvatarFallback>
+              </AvatarImage>
+            </Avatar>
+            <div>
+              <div class="font-bold">
+                {{user?.user_metadata.full_name}}
+              </div>
+              <div class="text-sm">
+                {{user?.email}}
+              </div>
+            </div>
+          </div>
+          <DropdownMenuSeparator />
+
+          <DropdownMenuItem @click="logout">
+            <Icon class="mr-2 h-4 w-4"
+                  name="heroicons:arrow-left-on-rectangle" />
+            <span class="ml-2">
+              Logout
+            </span>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
