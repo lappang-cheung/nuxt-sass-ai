@@ -4,11 +4,11 @@
 
 <template>
   <div>
-    <div class="mb-8">
-      <h2>Explore the power of AI</h2>
-      <p>Chat with the smartest AI - Explore the power of AI</p>
+    <div class="mb-8 space-y-4">
+      <h2 class="text-2xl md:text-4xl font-bold text-center">Explore the power of AI</h2>
+      <p class="text-muted-foreground font-light text-sm md:text-lg text-center">Chat with the smartest AI - Explore the power of AI</p>
     </div>
-    <div>
+    <div class="px-4 md:px-20 lg:px-32 space-y-4">
       <div v-for="tool in tools"
            :key="tool.label"
            @click="navigateTo(`/${tool.link}`)"
