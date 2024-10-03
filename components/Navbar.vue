@@ -11,6 +11,7 @@ const logout = async () => {
 <template>
   <div class="flex items-center p-4">
     <!--  Mobile Slide  -->
+    <MobileSidebar />
     <div class="flex w-full justify-end">
       <DropdownMenu>
         <DropdownMenuTrigger as-child>
