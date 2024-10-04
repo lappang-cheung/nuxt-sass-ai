@@ -29,5 +29,8 @@ export default defineNuxtConfig({
       callback: '/confirm',
       exclude: ['/']
     }
+  },
+  runtimeConfig: {
+    openaiKey: ''
   }
 })
