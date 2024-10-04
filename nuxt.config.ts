@@ -10,6 +10,8 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@nuxt/icon'
   ],
+  // Custom Directories (NuxtJS Docs)
+  // https://nuxt.com/docs/guide/directory-structure/components#custom-directories
   components: [
     {
       path: '~/components/shared',
@@ -21,11 +23,7 @@ export default defineNuxtConfig({
       extensions: ['vue'],
       pathPrefix: false
     },
-    {
-      path: '~/components',
-      extensions: ['vue'],
-      pathPrefix: false
-    }
+     '~/components'
   ],
   shadcn: {
     /**
