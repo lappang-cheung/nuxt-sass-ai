@@ -10,6 +10,23 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@nuxt/icon'
   ],
+  components: [
+    {
+      path: '~/components/shared',
+      extensions: ['vue'],
+      pathPrefix: false
+    },
+    {
+      path: '~/components/ui',
+      extensions: ['vue'],
+      pathPrefix: false
+    },
+    {
+      path: '~/components',
+      extensions: ['vue'],
+      pathPrefix: false
+    }
+  ],
   shadcn: {
     /**
      * Prefix for all the imported component
